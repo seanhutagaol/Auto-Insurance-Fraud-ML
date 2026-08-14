@@ -25,7 +25,7 @@ def load_and_clean_data(filepath: str) -> pd.DataFrame:
     pd.DataFrame
         The cleaned DataFrame with dropped irrelevant columns and imputed values.
     """
-    df = pd.read_excel(filepath)
+    df = pd.read_excel(filepath, engine="xlrd")
 
     # Drop structural identifiers and artifact columns
     columns_to_delete = [
